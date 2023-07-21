@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import { useState } from "react";
 import Button from "./components/Button";
 import styled from "styled-components/native";
 
@@ -8,9 +8,26 @@ const ButtonContainer = styled.View`
   width: 100%;
 `;
 
+const InputContainer = styled.View`
+  background-color: #4e4c51;
+  min-height: 50px;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px 5px;
+`;
+
 const Calculator = () => {
+  const [input, setInput] = useState(0);
+  const [currentOperator, setCurrentOperator] = useState(null);
+  const [result, setResult] = useState(null);
+  const [tempInput, setTempInput] = useState(null);
+  const [tempOperator, setTempOperator] = useState(null);
+
   return (
-    <View style={{ flex: 1, width: 250 }}>
+    <View style={{ flex: 1, width: 250, justifyContent: "center" }}>
+      <InputContainer>
+        <Text style={{ color: "white", fontSize: 35, textAlign: "right" }}>{input}</Text>
+      </InputContainer>
       <ButtonContainer>
         <Button type="reset" text="AC" onPress={() => {}} flex={3} />
         <Button type="operator" text="/" onPress={() => {}} flex={1} />
