@@ -1,7 +1,6 @@
 import { Text, TouchableOpacity } from "react-native";
 
 const COLOR = {
-  RESULT: "#4E4C51",
   RESET: "#5F5E62",
   OPERATOR: "#F39C29",
   NUM: "#5C5674",
